@@ -38,11 +38,11 @@ echo "==> Making project tree..."
 
 #---------------------------------------------------------
 #Database PHP connection
-echo "Do you want include a database connection into ${PROJECT_NAME} project? (y/n)"
-read CONFIRM
-if [ "$CONFIRM" == "y" ]; then
-	echo "Including database connection scripts..."
-fi
+#echo "Do you want include a database connection into ${PROJECT_NAME} project? (y/n)"
+#read CONFIRM
+#if [ "$CONFIRM" == "y" ]; then
+#	echo "Including database connection scripts..."
+#fi
 
 #---------------------------------------------------------
 echo ">>> Project tree creation done with success!! <<<"
