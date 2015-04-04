@@ -13,3 +13,5 @@ Script parameters
 Is possible call the script with some perameters. Actually only one parameter is admitted, that specify the name of the project that you are creating
 Example: webStarter.sh TestProject (This call start the script and define the name of the project as TestProject)
 If you don't specify a project name it will be asked during the script execution.
+
+-----------------------------------------------------
