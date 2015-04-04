@@ -47,7 +47,21 @@ if [ "$CONFIRM" == "y" ]; then
 	cd ${PROJECT_NAME}/include
 	echo "Including database connection scripts..."
 	cp -R $DB db
+	cd ..
 	echo "Database module included"
+fi
+
+#---------------------------------------------------------
+#Footer
+echo "Do you need a footer section for ${PROJECT_NAME} project? (y/n)"
+read CONFIRM
+if [ "$CONFIRM" == "y" ]; then
+        FOOTER="${FRAMEWORK_FOLDER}add-on/footer"
+        cd ${PROJECT_NAME}/include
+        echo "Including footer file..."
+        cp -R $FOOTER footer
+	cd ..
+        echo "Footer module included"
 fi
 
 #---------------------------------------------------------
