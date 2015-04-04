@@ -1,11 +1,13 @@
 #! /bin/sh
 
+#Script parameters
 #First script param: project name (if non specified it wil be asked before creating folder tree)
 
 #Web project starter
 
 PROJECT_NAME=""
 FRAMEWORK_FOLDER="/Users/Andrea/Documents/Andrea/Programmazione/shell/WebProjectInit/WebStarter/framework/"
+PROJECT_STRUCTURE="${FRAMEWORK_FOLDER}project_structure/"
 
 echo "==> Starting a new web project..."
 
@@ -33,16 +35,20 @@ mkdir ${PROJECT_NAME}
 
 #---------------------------------------------------------
 #Copying framework folder
-cp -R ${FRAMEWORK_FOLDER} ${PROJECT_NAME}
+cp -R ${PROJECT_STRUCTURE} ${PROJECT_NAME}
 echo "==> Making project tree..."
 
 #---------------------------------------------------------
 #Database PHP connection
-#echo "Do you want include a database connection into ${PROJECT_NAME} project? (y/n)"
-#read CONFIRM
-#if [ "$CONFIRM" == "y" ]; then
-#	echo "Including database connection scripts..."
-#fi
+echo "Do you want include a database connection into ${PROJECT_NAME} project? (y/n)"
+read CONFIRM
+if [ "$CONFIRM" == "y" ]; then
+	DB="${FRAMEWORK_FOLDER}add-on/db"
+	cd ${PROJECT_NAME}/include
+	echo "Including database connection scripts..."
+	cp -R $DB db
+	echo "Database module included"
+fi
 
 #---------------------------------------------------------
 echo ">>> Project tree creation done with success!! <<<"
