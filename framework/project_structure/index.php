@@ -29,6 +29,11 @@
 </head>
 
 <body>
+	
+    <center>
+    <h1>WebStarter</h1>
+    <h3>Build your web project!!</h3>
+    </center>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
