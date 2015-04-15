@@ -47,8 +47,21 @@ if [ "$CONFIRM" == "y" ]; then
 	cd ${PROJECT_NAME}/include
 	echo "Including database connection scripts..."
 	cp -R $DB db
-	cd ..
+	cd ../..
 	echo "Database module included"
+fi
+
+#---------------------------------------------------------
+#Facebook O-Auth
+echo "Do you want include Facebook O-Auth modules into ${PROJECT_NAME} project? (y/n)"
+read CONFIRM
+if [ "$CONFIRM" == "y" ]; then
+    FB_OAUTH="${FRAMEWORK_FOLDER}add-on/fb_oauth"
+    cd ${PROJECT_NAME}/include
+    echo "Including Facebook O-Auth..."
+    cp -R $FB_OAUTH auth
+    cd ../..
+    echo "Facebook O-Auth module included"
 fi
 
 #---------------------------------------------------------
@@ -56,12 +69,12 @@ fi
 echo "Do you need a footer section for ${PROJECT_NAME} project? (y/n)"
 read CONFIRM
 if [ "$CONFIRM" == "y" ]; then
-        FOOTER="${FRAMEWORK_FOLDER}add-on/footer"
-        cd ${PROJECT_NAME}/include
-        echo "Including footer file..."
-        cp -R $FOOTER footer
-	cd ..
-        echo "Footer module included"
+    FOOTER="${FRAMEWORK_FOLDER}add-on/footer"
+    cd ${PROJECT_NAME}/include
+    echo "Including footer file..."
+    cp -R $FOOTER footer
+	cd ../..
+    echo "Footer module included"
 fi
 
 #---------------------------------------------------------
